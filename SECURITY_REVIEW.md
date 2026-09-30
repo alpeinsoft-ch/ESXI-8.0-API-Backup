@@ -14,6 +14,9 @@ Arbeitsbaum **und den vollständigen Git-Verlauf** gescannt werden.
 
 ## Systemanalyse
 
+Entwicklungs- und Teststand ist VMware ESXi 8.0 Update 2. Das Verhalten auf
+neueren ESXi-Versionen wurde bisher nicht validiert.
+
 Der Backup-Ablauf besteht aus vier Schichten:
 
 1. `safe_esxi_backup.py` verbindet sich mit ESXi, sammelt Inventardaten,

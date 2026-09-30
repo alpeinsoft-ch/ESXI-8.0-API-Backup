@@ -4,6 +4,9 @@ Dieses Runbook beschreibt einen konservativen Ablauf. Befehle mit schreibender
 Wirkung erst nach erfolgreichem Preflight und in einer freigegebenen Umgebung
 ausführen.
 
+Gültigkeitsbereich: VMware ESXi 8.0 Update 2. Neuere ESXi-Versionen wurden
+bisher nicht getestet und müssen vor dem Einsatz separat validiert werden.
+
 ## 1. Einmalige Einrichtung
 
 ```bash

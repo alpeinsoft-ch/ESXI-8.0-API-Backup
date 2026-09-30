@@ -13,6 +13,9 @@ erstellt VM-Exporte über die vSphere API, unterstützt ausgeschaltete und
 laufende VMs, verifiziert Sicherungsdateien per SHA-256 und kann große VMDKs
 lokal in deduplizierte Blöcke zerlegen.
 
+**Kompatibilitätsstand:** Entwickelt für und getestet mit **VMware ESXi 8.0
+Update 2**. Neuere ESXi-Versionen wurden bisher nicht getestet.
+
 > **WIP / nicht ungeprüft produktiv einsetzen:** Vor dem Einsatz müssen
 > Berechtigungen, TLS-Zertifikate, Speicherbedarf, Snapshot-Verhalten und ein
 > vollständiger Restore in einer isolierten Umgebung getestet werden.
