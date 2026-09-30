@@ -1,0 +1,5 @@
+# Public example only. Generated vm_backup_selection.txt files are private.
+# Remove '# ' only for VMs that should be backed up.
+
+# name=ExampleVM-A moref=vm-101 instance_uuid=00000000-0000-4000-8000-000000000001 power=poweredOff cpu=2 ram_mb=4096 disks=1
+# name=ExampleVM-B moref=vm-102 instance_uuid=00000000-0000-4000-8000-000000000002 power=poweredOn cpu=4 ram_mb=8192 disks=2

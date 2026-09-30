@@ -1,0 +1,15 @@
+stages:
+  - test
+  - secret-detection
+
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+  - template: Jobs/Secret-Detection.gitlab-ci.yml
+
+unit_tests:
+  stage: test
+  image: python:3.12-slim
+  before_script:
+    - python -m pip install --disable-pip-version-check -r requirements.txt
+  script:
+    - python -m unittest discover -s tests -v

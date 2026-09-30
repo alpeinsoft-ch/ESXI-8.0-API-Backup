@@ -1,0 +1,37 @@
+# Secrets and local configuration
+config.env
+.env
+*.env
+!config.example.env
+
+# Backup payloads and infrastructure metadata
+backups/
+logs/
+*.log
+vm_backup_selection.txt
+*.inprogress/
+*.failed/
+.delta_store/
+.restore_hydrated/
+
+# Runtime state
+*.lock
+*.part
+*.tmp
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
