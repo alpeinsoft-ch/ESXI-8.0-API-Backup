@@ -1,5 +1,7 @@
 # Sicherheitsrichtlinie
 
+[English version](SECURITY.en.md)
+
 Dieses Projekt ist Work in Progress. Sicherheitsmeldungen sollen nicht mit
 realen Zugangsdaten, VM-Namen, IP-Adressen, UUIDs, Logs oder Backup-Dateien in
 einem öffentlichen Issue veröffentlicht werden.
@@ -26,9 +28,9 @@ rg -n -i -uu '(password|secret|token|cookie|private.key|authorization|bearer)' .
 ```
 
 Treffer müssen einzeln bewertet werden. Platzhalter in Tests und
-`config.example.env` sind erlaubt; reale Werte sind es nicht. Zusätzlich sollte
-vor jedem Release ein etablierter Secret-Scanner über den gesamten Git-Verlauf
-laufen.
+`config.example.env` bzw. `config.example.de.env` sind erlaubt; reale Werte
+sind es nicht. Zusätzlich sollte vor jedem Release ein etablierter
+Secret-Scanner über den gesamten Git-Verlauf laufen.
 
 ## Sicherheitsgrenzen
 

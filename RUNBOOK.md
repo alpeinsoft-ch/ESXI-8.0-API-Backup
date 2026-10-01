@@ -1,5 +1,7 @@
 # Betriebs- und Restore-Runbook
 
+[English version](RUNBOOK.en.md)
+
 Dieses Runbook beschreibt einen konservativen Ablauf. Befehle mit schreibender
 Wirkung erst nach erfolgreichem Preflight und in einer freigegebenen Umgebung
 ausführen.
@@ -15,7 +17,7 @@ python3 -m venv .venv
 . .venv/bin/activate
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
-cp config.example.env config.env
+cp config.example.de.env config.env
 chmod 600 config.env
 ```
 
@@ -91,7 +93,7 @@ ist.
 ## 5. Delta-Speicherung
 
 Der erste Stand einer VM ist ein Full-Backup. Folgende Stände können große
-VMDK-Extents in lokale SHA-256-Blöcke zerlegen.
+VMDK-Extents in lokale, SHA-256-adressierte Blöcke zerlegen.
 
 Wichtige Regeln:
 

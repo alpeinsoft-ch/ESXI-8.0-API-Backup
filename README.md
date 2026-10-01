@@ -1,24 +1,29 @@
-Entwickelt von: Alpein Software Swiss AG
-
-Programmiert von: [Samuel Werner (Cyberwerner)](https://github.com/Cyberwerner4444)
-
-Unterstützt von: KI
-
-Achtung: WIPCODING-Inhalt
-
 # Safety-gated ESXi API Backup
 
-Ein Python-basiertes Backup- und Restore-Werkzeug für VMware ESXi. Das System
-erstellt VM-Exporte über die vSphere API, unterstützt ausgeschaltete und
-laufende VMs, verifiziert Sicherungsdateien per SHA-256 und kann große VMDKs
-lokal in deduplizierte Blöcke zerlegen.
+[English version](README.en.md)
+
+> **Entwickelt von:** Alpein Software Swiss AG<br>
+> **Programmiert von:** [Samuel Werner (Cyberwerner)](https://github.com/Cyberwerner4444)<br>
+> **Unterstützt von:** KI<br>
+> **Achtung:** WIPCODING-Inhalt
+
+Dieses Repository enthält ein eigenständiges Python-basiertes Backup- und
+Restore-Werkzeug für VMware ESXi. Es erstellt VM-Exporte über die vSphere API,
+unterstützt ausgeschaltete und laufende VMs, verifiziert Sicherungsdateien per
+SHA-256 und kann große VMDKs lokal in deduplizierte Blöcke zerlegen.
 
 **Kompatibilitätsstand:** Entwickelt für und getestet mit **VMware ESXi 8.0
 Update 2**. Neuere ESXi-Versionen wurden bisher nicht getestet.
 
-> **WIP / nicht ungeprüft produktiv einsetzen:** Vor dem Einsatz müssen
-> Berechtigungen, TLS-Zertifikate, Speicherbedarf, Snapshot-Verhalten und ein
-> vollständiger Restore in einer isolierten Umgebung getestet werden.
+> **Work in Progress — nicht ungeprüft produktiv einsetzen.** Berechtigungen,
+> TLS-Zertifikate, Speicherbedarf, Snapshot-Verhalten und ein vollständiger
+> Restore müssen vor dem Einsatz in einer isolierten Umgebung getestet werden.
+
+Eine ausführliche Betriebs- und Restore-Anleitung steht in beiden Sprachen
+bereit:
+
+- [Betriebs- und Restore-Runbook auf Deutsch](RUNBOOK.md)
+- [Operations and restore runbook in English](RUNBOOK.en.md)
 
 ## Sicherheitsmodell
 
@@ -81,7 +86,7 @@ python -m pip install -r requirements.txt
 ## Konfiguration
 
 ```bash
-cp config.example.env config.env
+cp config.example.de.env config.env
 chmod 600 config.env
 ```
 
@@ -152,8 +157,9 @@ Inventarliste erzeugen:
 ```
 
 Die erzeugte `vm_backup_selection.txt` enthält Infrastrukturidentitäten und ist
-absichtlich von Git ausgeschlossen. Nur gewünschte VM-Zeilen aktivieren und
-zuerst einen reinen Preflight ausführen:
+absichtlich von Git ausgeschlossen. Eine [deutsche Beispieldatei](vm_backup_selection.example.de.txt)
+liegt im Repository. Nur gewünschte VM-Zeilen aktivieren und zuerst einen
+reinen Preflight ausführen:
 
 ```bash
 ./start_select_vm_backup.sh --selection-file vm_backup_selection.txt --list-only
@@ -193,7 +199,8 @@ explizite Entscheidungen.
 
 `run_weekly_vm_backup.sh` verwendet eine Lock-Datei, um parallele Wochenläufe
 zu verhindern. Vor einer Cron-Aktivierung muss ein manueller Lauf mit derselben
-Auswahldatei erfolgreich abgeschlossen sein. Details stehen im [RUNBOOK](RUNBOOK.md).
+Auswahldatei erfolgreich abgeschlossen sein. Details stehen im [Betriebs- und
+Restore-Runbook](RUNBOOK.md).
 
 ## Projektdateien
 
@@ -204,7 +211,7 @@ Auswahldatei erfolgreich abgeschlossen sein. Details stehen im [RUNBOOK](RUNBOOK
 - `restore_vm_backup.py` – konservativer Restore unter neuem VM-Namen
 - `delta_storage.py` – lokale Block-Deduplizierung und Materialisierung
 - `tests/test_safety.py` – Sicherheits- und Regressionstests
-- `SECURITY_REVIEW.md` – Veröffentlichungs- und Datei-Audit
+- `SECURITY_REVIEW.md` – Veröffentlichungs- und Datei-Audit auf Deutsch
 
 ## Tests
 
@@ -218,4 +225,6 @@ werden.
 
 ## Lizenz
 
-Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
+Dieses Projekt steht unter der [MIT-Lizenz](LICENSE). Eine unverbindliche
+deutsche Übersetzung zur Orientierung steht in [LICENSE.de.md](LICENSE.de.md);
+maßgeblich bleibt der englische Lizenztext.

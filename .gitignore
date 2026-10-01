@@ -3,6 +3,7 @@ config.env
 .env
 *.env
 !config.example.env
+!config.example.de.env
 
 # Backup payloads and infrastructure metadata
 backups/

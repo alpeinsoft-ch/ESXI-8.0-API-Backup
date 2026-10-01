@@ -1,6 +1,8 @@
 # Sicherheits- und Veröffentlichungsprüfung
 
-Stand: 2026-09-30
+Stand: 2026-10-01
+
+[English version](SECURITY_REVIEW.en.md)
 
 ## Ergebnis
 
@@ -68,13 +70,13 @@ die Weigerung, bestehende Ziele zu überschreiben.
 |---|---|
 | `.gitlab-ci.yml` | Führt nur Unit-Tests, SAST und Secret Detection aus; keine Build-, Review- oder Deployment-Stufen. |
 | `.gitignore` | Schließt Secrets, Logs, Backups, Inventarlisten, Bytecode, virtuelle Umgebungen und Laufzeitdaten aus. |
-| `LICENSE` | Standard-MIT-Lizenz; Rechteinhaber ist Alpein Software Swiss AG. |
-| `README.md` | Neu erstellt; neutral, WIP-Warnung, gewünschte Urheberangaben ganz oben, keine internen Betriebsdaten. |
-| `RUNBOOK.md` | Neu erstellt; nur Platzhalterpfade und neutrale VM-Namen, sichere Betriebsreihenfolge. |
-| `SECURITY.md` | Veröffentlichungs- und Meldehinweise ohne interne Kontakt- oder Infrastrukturdaten. |
-| `SECURITY_REVIEW.md` | Dokumentiert Audit, Fixes und Restrisiken; keine realen Zielsystemdaten. |
+| `LICENSE` / `LICENSE.de.md` | Englische MIT-Standardlizenz und unverbindliche deutsche Leseübersetzung; Rechteinhaber ist Alpein Software Swiss AG. |
+| `README.md` / `README.en.md` | Deutsche Hauptfassung und englische Übersetzung; WIP-Hinweis, gewünschte Urheberangaben oben und keine internen Betriebsdaten. |
+| `RUNBOOK.md` / `RUNBOOK.en.md` | Deutsche und englische Betriebsanleitungen mit Platzhalterpfaden, neutralen VM-Namen und sicherer Reihenfolge. |
+| `SECURITY.md` / `SECURITY.en.md` | Veröffentlichungs- und Meldehinweise ohne interne Kontakt- oder Infrastrukturdaten. |
+| `SECURITY_REVIEW.md` / `SECURITY_REVIEW.en.md` | Dokumentiert Audit, Fixes und Restrisiken ohne reale Zielsystemdaten. |
 | `backup_vm.py` | Neutral umbenannter Einstieg; keine Geheimnisse oder feste Kundenbezeichnung. |
-| `config.example.env` | Nur Dokumentations-IP und Platzhalter; TLS sicher voreingestellt, kein echtes Passwort. |
+| `config.example.env` / `config.example.de.env` | Nur Dokumentations-IP und Platzhalter; TLS sicher voreingestellt, kein echtes Passwort. |
 | `delta_storage.py` | Pfad-/Digest-Prüfung, fail-closed Cleanup, keine Infrastrukturwerte. |
 | `inventory_discovery.py` | Neutraler Wrapper; Inventarausgabe bleibt lokal und wird nicht mitgeliefert. |
 | `requirements.txt` | Nur exakt gepinnte öffentliche Paketversionen. |
@@ -88,7 +90,7 @@ die Weigerung, bestehende Ziele zu überschreiben.
 | `start_vm_backup_selection.sh` | Kein interner Konfigurationspfad; generische lokale Konfigurationssuche. |
 | `start_vm_liste.sh` | Keine Betriebsidentitäten; erzeugte private Liste ist ignoriert. |
 | `tests/test_safety.py` | Nur synthetische Namen, UUIDs, MACs und Secrets; Sicherheitsregressionen ergänzt. |
-| `vm_backup_selection.example.txt` | Ausschließlich synthetische, deaktivierte Beispielzeilen. |
+| `vm_backup_selection.example.txt` / `vm_backup_selection.example.de.txt` | Synthetische, deaktivierte Beispielzeilen mit Kommentaren in beiden Sprachen. |
 | `vm_backup_selection.py` | Schreibt lokale Inventardaten; Ausgabe ist per Ignore-Regel geschützt. |
 
 ## Entfernte private Artefakte
@@ -99,7 +101,7 @@ alte Startparameter, doppelte Requirements-Datei, reale VM-Auswahldatei, drei
 Laufzeitlogs sowie sämtliche gefundenen `.pyc`-Dateien. Die Originale liegen
 außerhalb des Repositorys in einem privaten lokalen Archiv.
 
-## Nachweise
+## Im Audit festgehaltene Nachweise
 
 - Python-Syntaxprüfung: bestanden
 - Shell-Syntaxprüfung: bestanden
